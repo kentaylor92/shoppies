@@ -34,7 +34,7 @@ const apiKey = `a8e57f6b`;
       .then(result => result)
       .catch(error => console.log('error', error));
     const movies = JSON.parse(response).Search;
-    console.log(movies)
+    // console.log(movies)
     setResults(movies);
   }
 
@@ -46,37 +46,38 @@ const apiKey = `a8e57f6b`;
     setSearchTerm("");
   };
 
-  console.log(searchTerm);
-  console.log(nominations);
+  // console.log(searchTerm);
+  // console.log(nominations);
 
 
   return (
-    <div>
+    <div className="search">
       <form action="submit"
        >
         <label for="search"></label>
         <input type="text" 
-        placeholder="Click here to search for movies!" 
+          placeholder="Search for movies by title." 
         name="search"
         onChange={handleChange}
         value={searchTerm}
         ></input>
         <button type="submit" onClick={e =>  {
           e.preventDefault(); 
-          console.log("clicked!", searchTerm)
-          getMovies();
+          if (searchTerm.length) {
+            getMovies();
+          }
           emptySearch();
           // getMovies();
         }}
-          >Search!</button>
+        ><i class="fa fa-search" />Search</button>
       </form>
 
       <div className="results-noms">
 
-        <Nominations nominations={nominations} count={count} />        
+        {nominations.length ? <Nominations nominations={nominations} setNominations={setNominations} count={count} /> : ''}       
         {nominations.length !== total ? 
-        <p>Please select {count} more movies!</p> : 
-        <p>NO MORE!!!</p>      
+          <p className="movie-count">Please select <span>{count}</span> more movies!</p> : 
+          <p className="movie-count">NO MORE!!!</p>      
         }
         <Results results={results} nominations={nominations} setNominations={setNominations} count={count}/>
 

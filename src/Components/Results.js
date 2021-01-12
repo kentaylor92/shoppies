@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../Styles/Results.scss';
-import Nominations from './Nominations';
 
 const Results = (props) => {
   const nominations = props.nominations;
@@ -11,16 +10,23 @@ const Results = (props) => {
     <div className="results">
       <ul>
         {!!props.results && props.results.map((movie, idx) => {
+          const isSelected = nominations.some(e => e.imdbID === movie.imdbID);
           return (
-            <li key={idx}>
-              <img src={movie.Poster} alt={movie.Title}/>
-              <p>{movie.Title}</p>
-              <button onClick={e => {
+            <li key={idx} className={isSelected ? 'selected' : ''}>
+              <img src={movie.Poster !== "N/A" ? movie.Poster : `https://via.placeholder.com/180x266.png?text=POSTER+NOT+FOUND`} alt={movie.Title}/>
+              <p>{movie.Title} ({movie.Year})</p>
+              {/* <p>{movie.Year}</p> */}
+              <button className={nominations.length !== total ? '' : 'disabled'}
+              onClick={e => {
                 e.preventDefault();               
-                if (nominations.length < total) {
-                  setNominations([...nominations, movie]);          
+                if (nominations.length < total || isSelected) {
+                  if (isSelected) {
+                    setNominations(nominations.filter(e => e.imdbID !== movie.imdbID));
+                  } else {
+                    setNominations([...nominations, movie]);        
+                  }        
                 }
-                }}>Nominate</button>
+                }}>{!isSelected ? 'Nominate' : 'Remove'}</button>
             </li>
           )
         })}
