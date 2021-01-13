@@ -40,6 +40,13 @@
         border: none;
         border: 2px solid black;
         padding: 5px 10px;
+        transition: 0.3s ease-in-out;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        &:hover,
+        &:focus {
+          transform: scale(1.05);
+        }
 
         &.disabled {
           cursor: not-allowed;
@@ -47,25 +54,17 @@
       }
 
       &.selected {
-        // background-color: black;
-        // color: white;
-        // display: none;
-        // position: relative;
-        // &::after {
-        //   content: "";
-        //   position: absolute;
-        //   top: 0;
-        //   left: 0;
-        //   width: 100%;
-        //   height: 100%;
-          
-        //   opacity: 0.7;
-        // }
+        background-color: black;
+        color: white;
         
 
         button {
           color: white;
-          background-color: red;
+          background-color:#212326;
+          border: 2px solid white;
+          &.disabled {
+            cursor: pointer;
+          }
         }
       }
     }

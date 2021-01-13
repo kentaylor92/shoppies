@@ -31,7 +31,7 @@ i {
   margin-top: 50px;
   text-align: center;
 
-  svg {
+  .logo {
     fill: white;
     width: 100px;
     margin-bottom: 40px;
@@ -45,8 +45,12 @@ i {
 
   }
 
-
   li {
     list-style-type: none;
+  }
+
+  .thanks {
+    color: white;
+    padding-bottom: 50px;
   }
 }

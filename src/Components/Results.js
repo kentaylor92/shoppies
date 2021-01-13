@@ -23,7 +23,7 @@ const Results = (props) => {
                   if (isSelected) {
                     setNominations(nominations.filter(e => e.imdbID !== movie.imdbID));
                   } else {
-                    setNominations([...nominations, movie]);        
+                    setNominations([...nominations, movie]);                    
                   }        
                 }
                 }}>{!isSelected ? 'Nominate' : 'Remove'}</button>

@@ -28,6 +28,7 @@
       padding: 10px 20px;
       border-radius: 5px;
       font-size: 1.2rem;
+      transition: 0.3s ease-in-out;
       @media (max-width: 768px) {
         width: 80%;
         margin: 0 auto;
@@ -39,6 +40,7 @@
       &:hover,
       &:focus {
         cursor: pointer;
+        transform: scale(1.05);
       }
     }
   }
@@ -57,7 +59,8 @@
     margin: 50px;
   }
   
-  .movie-count {
+  .movie-count,
+  .submit-noms {
     text-align: center;
     padding: 10px 0;
     background-color: white;
@@ -67,6 +70,36 @@
     span {
       color: rgb(53, 2, 134);
       font-size: 2rem;
+    }
+  }
+
+  .submit-noms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+
+    .submit-noms-btn {
+      padding: 10px 20px;
+      margin-left: 20px;
+      background-color: #008060;
+      border-radius: 3px;
+      border: none;
+      border: 2px solid #212326;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.86px;
+      font-weight: bold;
+      transition: 0.3s ease-in-out;
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        opacity: 0.9;
+        transform: scale(1.05);
+      }
     }
   }
 }

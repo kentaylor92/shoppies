@@ -1,5 +1,4 @@
 import React from 'react';
-import Sticky from 'react-sticky-el';
 import '../Styles/Nominations.scss';
 
 const Nominations = (props) => {
@@ -11,11 +10,11 @@ const Nominations = (props) => {
   // console.log(count)
 
   return (
-    <Sticky className="sticky-container">
+    
       <div className="nominations">
         <h3>Your nominations are...</h3>
         <ul>
-          {!!props.nominations && props.nominations.map((movie, idx) => {
+          {!!nominations && nominations.map((movie, idx) => {
             return (
               <li key={idx}>
                 <img src={movie.Poster !== "N/A" ? movie.Poster : 'https://via.placeholder.com/100x145.png?text=POSTER+NOT+FOUND'} alt={movie.Title}></img>
@@ -30,7 +29,7 @@ const Nominations = (props) => {
           })}
         </ul>        
       </div>
-    </Sticky>
+    
   )
 }
 

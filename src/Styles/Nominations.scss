@@ -49,10 +49,13 @@
         border: 2px solid #212326;
         border-radius: 3px;
         padding: 5px 10px;
+        transition: 0.3s ease-in-out;
+        text-transform: uppercase;
         &:hover,
         &:focus {
           cursor: pointer;
-          opacity: 0.7;
+          opacity: 0.9;
+          transform: scale(1.05);
         }
       }
     }
