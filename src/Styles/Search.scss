@@ -3,26 +3,35 @@
   form {
     text-align: center;
     display: flex;
-    // flex-direction: column;
-    // align-items: center;
     justify-content: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      margin: 0 30px;
+    }
     
   
     input {
       width: 30%;
-      padding: 10px;
+      padding: 15px;
       border-radius: 5px;
+      margin-right: 20px;
+      @media (max-width: 768px) {
+        width: 80%;
+        margin: 0 auto;
+      }
     }
   
     button {
-      // display: none;
       background: #212326;
       color: white;
       border: none;
-      margin-top: 10px;
       padding: 10px 20px;
       border-radius: 5px;
       font-size: 1.2rem;
+      @media (max-width: 768px) {
+        width: 80%;
+        margin: 0 auto;
+      }
 
       i {
         padding-right: 10px;
@@ -31,6 +40,16 @@
       &:focus {
         cursor: pointer;
       }
+    }
+  }
+
+  .instructions {
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    padding: 0 30px;
+    span {
+      text-decoration: underline;
     }
   }
   
@@ -42,7 +61,6 @@
     text-align: center;
     padding: 10px 0;
     background-color: white;
-    border: 2px solid #212326;
     border-radius: 5px;
     margin-bottom: 20px;
 

@@ -9,7 +9,7 @@ const Results = (props) => {
   return (
     <div className="results">
       <ul>
-        {!!props.results && props.results.map((movie, idx) => {
+        {!!props.results ? props.results.map((movie, idx) => {
           const isSelected = nominations.some(e => e.imdbID === movie.imdbID);
           return (
             <li key={idx} className={isSelected ? 'selected' : ''}>
@@ -29,7 +29,12 @@ const Results = (props) => {
                 }}>{!isSelected ? 'Nominate' : 'Remove'}</button>
             </li>
           )
-        })}
+        }) : 
+        !props.results ? 
+        <div className="no-results">
+          <p>Sorry. No results found. Please try another search.</p>
+        </div> : <div>Loading...</div>
+        }
       </ul>
     </div>
   )

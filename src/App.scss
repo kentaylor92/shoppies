@@ -29,12 +29,20 @@ i {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 50px;
+  text-align: center;
+
+  svg {
+    fill: white;
+    width: 100px;
+    margin-bottom: 40px;
+  }
 
   h1 {
     text-align: center;
     color: white;
     font-size: 3rem;
-    padding-bottom: 20px;
+    padding: 0 30px 20px 0;
+
   }
 
 
