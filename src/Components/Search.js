@@ -21,7 +21,7 @@ const Search = () => {
   }, [nominations])
 
   const getMovies = async () => {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
       .then(response => response.text())
       .then(result => result)
       .catch(error => console.log('error', error));
