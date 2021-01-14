@@ -11,8 +11,8 @@ const Nominations = (props) => {
 
   return (
     
-      <div className="nominations">
-        <h3>Your nominations are...</h3>
+      <section className="nominations">
+        <h2>Your nominations are...</h2>
         <ul>
           {!!nominations && nominations.map((movie, idx) => {
             return (
@@ -23,12 +23,12 @@ const Nominations = (props) => {
                   e.preventDefault(); 
                   setNominations(nominations.filter(e => e.imdbID !== movie.imdbID));
                 }}
-                >Remove</button>
+                >Remove <span className="sr-only">{movie.Title} from nominations.</span></button>
               </li>
             )
           })}
         </ul>        
-      </div>
+      </section>
     
   )
 }

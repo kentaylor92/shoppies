@@ -7,7 +7,8 @@ const Results = (props) => {
   const total = 5;
   
   return (
-    <div className="results">
+    <section className="results">
+      <h2 className="sr-only">Search results:</h2>
       <ul>
         {!!props.results ? props.results.map((movie, idx) => {
           const isSelected = nominations.some(e => e.imdbID === movie.imdbID);
@@ -26,7 +27,7 @@ const Results = (props) => {
                     setNominations([...nominations, movie]);                    
                   }        
                 }
-                }}>{!isSelected ? 'Nominate' : 'Remove'}</button>
+                }}>{!isSelected ? 'Nominate' : 'Remove'}<span className="sr-only">{movie.Title}</span></button>
             </li>
           )
         }) : 
@@ -36,7 +37,7 @@ const Results = (props) => {
         </div> : <div>Loading...</div>
         }
       </ul>
-    </div>
+    </section>
   )
 }
 

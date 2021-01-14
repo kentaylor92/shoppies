@@ -4,17 +4,21 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     @media (max-width: 768px) {
       flex-direction: column;
       margin: 0 30px;
     }
     
+    label {
+      color: white;
+    }
   
     input {
       width: 30%;
       padding: 15px;
       border-radius: 5px;
-      margin-right: 20px;
+      margin: 0 20px;
       @media (max-width: 768px) {
         width: 80%;
         margin: 0 auto;
@@ -50,6 +54,7 @@
     margin-bottom: 20px;
     line-height: 1.5;
     padding: 0 30px;
+    font-size: 1.2rem;
     span {
       text-decoration: underline;
     }
@@ -66,11 +71,19 @@
     background-color: white;
     border-radius: 5px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 
     span {
       color: rgb(53, 2, 134);
       font-size: 2rem;
+      margin-left: 10px;
     }
+  }
+
+  .movie-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .submit-noms {
