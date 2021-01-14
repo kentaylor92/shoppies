@@ -5,7 +5,7 @@ import Success from '../Components/Success';
 import Sticky from 'react-sticky-el';
 import '../Styles/Search.scss';
 
-const Search = (props) => {
+const Search = () => {
 
   const [searchTerm, setSearchTerm] = useState(null);
   const [results, setResults] = useState([]);
@@ -13,7 +13,7 @@ const Search = (props) => {
   const [success, setSuccess] = useState(false);
   const count = 5 - nominations.length;
   const total = 5;
-  const apiKey = `a8e57f6b`;
+  const apiKey = process.env.REACT_APP_API_KEY;
 
 
   useEffect(() => {
