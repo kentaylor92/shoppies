@@ -45,12 +45,13 @@ const Search = () => {
       {!success ? <p className="instructions">To get started, search for your favourite movies and then nominate the 5 that you feel deserve to win <span>the most coveted award in the entertainment industry</span> - a 2021 Shoppie.</p> : ''}
       {!success ? 
         <form action="submit">
-          <label for="search">Search for movies by title:</label>
+          <label htmlFor="search">Search for movies by title:</label>
           <input type="text" 
             placeholder="ie. Tampopo" 
-          name="search"
-          onChange={handleChange}
-          value={searchTerm ? searchTerm : ''}
+            name="search"
+            id="search"
+            onChange={handleChange}
+            value={searchTerm ? searchTerm : ''}
           ></input>
           <button type="submit" onClick={e =>  {
             e.preventDefault(); 
