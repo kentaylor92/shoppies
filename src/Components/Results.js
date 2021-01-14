@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../Styles/Results.scss';
 
 const Results = (props) => {
@@ -15,19 +15,19 @@ const Results = (props) => {
           return (
             <li key={idx} className={isSelected ? 'selected' : ''}>
               <img src={movie.Poster !== "N/A" ? movie.Poster : `https://via.placeholder.com/180x266.png?text=POSTER+NOT+FOUND`} alt={movie.Title}/>
-              <p>{movie.Title} ({movie.Year})</p>
-              {/* <p>{movie.Year}</p> */}
+              <p>{movie.Title} ({movie.Year})</p>              
               <button className={nominations.length !== total ? '' : 'disabled'}
-              onClick={e => {
-                e.preventDefault();               
-                if (nominations.length < total || isSelected) {
-                  if (isSelected) {
-                    setNominations(nominations.filter(e => e.imdbID !== movie.imdbID));
-                  } else {
-                    setNominations([...nominations, movie]);                    
-                  }        
-                }
-                }}>{!isSelected ? 'Nominate' : 'Remove'}<span className="sr-only">{movie.Title}</span></button>
+                onClick={e => {
+                  e.preventDefault();               
+                  if (nominations.length < total || isSelected) {
+                    if (isSelected) {
+                      setNominations(nominations.filter(e => e.imdbID !== movie.imdbID));
+                    } else {
+                      setNominations([...nominations, movie]);                    
+                    }        
+                  }
+                  }}>{!isSelected ? 'Nominate' : 'Remove'}<span className="sr-only">{movie.Title}</span>
+              </button>
             </li>
           )
         }) : 

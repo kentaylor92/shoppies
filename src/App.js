@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.scss';
 import Logo from './shopify-logo.svg';
 import Search from './Components/Search';

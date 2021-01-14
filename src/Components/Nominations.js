@@ -2,12 +2,8 @@ import React from 'react';
 import '../Styles/Nominations.scss';
 
 const Nominations = (props) => {
-  let count = props.count;
   const nominations = props.nominations;
   const setNominations = props.setNominations;
-  // const count = props.count - props.nominations.length;
-  // console.log(props)
-  // console.log(count)
 
   return (
     
@@ -28,8 +24,7 @@ const Nominations = (props) => {
             )
           })}
         </ul>        
-      </section>
-    
+      </section>    
   )
 }
 
